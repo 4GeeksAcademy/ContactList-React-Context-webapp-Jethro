@@ -1,0 +1,45 @@
+body{
+    background-color: lightblue;
+    
+}
+li{
+    border-color: lightgrey;
+    border-style: double;
+}
+
+.card-photoId{
+    border-radius: 50%;
+}
+
+.card-body{
+    padding-left: 30%;
+
+}
+
+.card-body-address{
+    display : inline;
+}
+.card-body-tel{
+    display : inline;
+}
+
+
+.img{
+    align-content: left;
+    width : 50px;
+    height : 50px;
+}
+
+.card-body-address{
+    display : inline-block;
+}
+
+/*
+.card-body-tel{
+    display :inline-block;
+}
+*/
+.card-body-email{
+    display :inline-block;
+}
+
