@@ -12,28 +12,28 @@ import { Link } from "react-router-dom";
 
 export const Contact = props => {
     const { store, actions} = useContext(Context);   
-    const { name, setName} = useState('John Doe');
-    const { phone, setPhone} = useState('John Doe');
-    const { address, setAddress} = useState('John Doe');
-    const { email, setEmail} = useState('John Doe');
+    const [name, setName] = useState('John Doe');
+    const [phone, setPhone] = useState('John Doe');
+    const [ address, setAddress] = useState('John Doe');
+    const [email, setEmail] = useState('John Doe');
 
      return(
         <div className="jumbotron">
             <div class="mb-3">
                 <h1>Add a New Contact</h1>
-                    <label for="formGroupExampleInput" class="form-label">Full Name</label>
+                    <label htmlFor="formGroupExampleInput" class="form-label">Full Name</label>
                     <input value={name} onChange={(e)=>setName(e.target.value)}  type="text" class="form-control" id="formGroupExampleInput1" placeholder="Enter your full name here"></input>
             </div>
             <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Email</label>
+                    <label htmlFor="formGroupExampleInput2" class="form-label">Email</label>
                     <input value={email} onChange={(e)=>setEmail(e.target.value)} type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter your email address here"></input>
             </div>
             <div class="mb-3">
-                    <label for="formGroupExampleInput3" class="form-label">Phone</label>
+                    <label htmlFor="formGroupExampleInput3" class="form-label">Phone</label>
                     <input value={phone} onChange={(e)=>setPhone(e.target.value)}  type="text" class="form-control" id="formGroupExampleInput3" placeholder="Enter your phone number here"></input>
             </div>
             <div class="mb-3">
-                    <label for="formGroupExampleInput3" class="form-label">Address</label>
+                    <label htmlFor="formGroupExampleInput3" class="form-label">Address</label>
                     <input value={address} onChange={(e)=>setAddress(e.target.value)} type="text" class="form-control" id="formGroupExampleInput3" placeholder="Enter your physical address here"></input>
             </div>
             <div class="button">

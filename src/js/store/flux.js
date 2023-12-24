@@ -61,22 +61,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			updateContact: async (full_name, email, phone, address, contact_id) => {
-				const contact = {
+				let contact = {
 					full_name: full_name,
 					email: email,
 					phone: phone,
 					address: address,
+					agenda_slug: "jethro_agenda",
 				}
+				console.log(contact);
 				fetch('https://playground.4geeks.com/apis/fake/contact/' + contact_id, {
 
 					method: "PUT",
 					headers: {
 						"Content-Type": "application/json"
 					},
-					body: JSON.stringify({
+					body: JSON.stringify(
 						contact
-
-					})
+					)
 				})
 
 			},

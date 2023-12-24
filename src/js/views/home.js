@@ -13,7 +13,7 @@ export const Home = () => {
   const [contact, setContact] = useState([]);
 
   useEffect(() => {
-    actions.addContact("Jethro", "123 Parkway", "3445666", "jwetti@gmail.com")
+    /*actions.addContact("Jethro", "123 Parkway", "3445666", "jwetti@gmail.com")*/
     actions.getContact()
     setContact(store.contacts)
   }, [])

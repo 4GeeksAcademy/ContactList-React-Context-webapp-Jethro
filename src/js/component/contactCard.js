@@ -12,7 +12,7 @@ const ContactCard = (props) => {
 
         return (
 
-                <><div className="card" style={{ "width": "25rem" }}>
+                <div className="card mb-3" style={{ "width": "18rem" }}>
 
                         <img className="card-photoId" src="https://www.shutterstock.com/shutterstock/photos/1469645879/display_1500/stock-photo-headshot-portrait-of-smiling-biracial-male-employee-in-glasses-stand-forefront-look-at-camera-1469645879.jpg" />
 
@@ -35,10 +35,10 @@ const ContactCard = (props) => {
 
                                 <Link className="update-pen" to={"/UpdateContact/" + props.contact_id}><i className="fa-solid fa-pen"></i></Link>
                                 <div className="trashBox btn btn-danger" onClick={() => actions.deleteContact(props.contact_id)}><i className="fa-solid fa-trash-can"></i></div>
-
-
                         </div>
-                </div></>
+
+                </div>
+                
 
 
         );
