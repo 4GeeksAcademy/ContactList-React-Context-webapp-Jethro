@@ -38,7 +38,7 @@ export const Contact = props => {
             </div>
             <div class="button">
                     <button type="button" class="btn btn-primary" onClick={()=>actions.addContact(name,email,phone,address)}>Add Contact</button>
-                    <Link type="button" to={"/"} class="btn btn-danger">Cancel</Link>
+                    <Link type="button" to={"/"}  class="btn btn-danger">Cancel</Link>
             </div>
         </div>
      )

@@ -86,7 +86,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			deleteContact: async (contact_id) => {
 
 
-				fetch('https://playground.4geeks.com/apis/fake/contact/' + contact_id, {
+
+				const response = await fetch('https://playground.4geeks.com/apis/fake/contact/' + contact_id, {
 
 					method: "DELETE",
 					headers: {
@@ -94,6 +95,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 
 				})
+				const data = await response.json()
+				window.location.reload()
 			},
 
 			getContact: async () => {

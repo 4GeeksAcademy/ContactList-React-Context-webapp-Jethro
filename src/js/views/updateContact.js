@@ -37,7 +37,7 @@ export const UpdateContact = props => {
                                 <input value={address} onChange={(e) => setAddress(e.target.value)} type="text" class="form-control" id="formGroupExampleInput3" placeholder="Enter your physical address here"></input>
                         </div>
                         <div class="button">
-                                <button type="button" class="btn btn-success" onClick={() => actions.updateContact(name, email, phone, address, id)}>Update Contact </button>
+                                <Link to={"/"} type="button" class="btn btn-success" onClick={() => actions.updateContact(name, email, phone, address, id)}>Update Contact </Link>
                                 <Link type="button" to={"/"} class="btn btn-danger  justify-content-center">Cancel</Link>
                                 <Link type="button" to={"/"} class="btn btn-primary justify-content-right">Go to Home page</Link>
                         </div>
