@@ -12,34 +12,48 @@ import { Link, useParams } from "react-router-dom";
 export const UpdateContact = props => {
         const { id } = useParams()
         const { store, actions } = useContext(Context);
-        const [name, setName] = useState('');
-        const [phone, setPhone] = useState('');
-        const [address, setAddress] = useState('');
-        const [email, setEmail] = useState('');
+        const [name, setName] = useState();
+        const [phone, setPhone] = useState();
+        const [address, setAddress] = useState();
+        const [email, setEmail] = useState();
 
+        useEffect(() => {
+                async function getContact() {
+                        await actions.getContact()
+                        let thisContact = store.contacts.filter((contact) => contact.id === id)
+                        console.log(thisContact)
+                        setName(thisContact.name)
+                        setPhone(thisContact.phone)
+                        setEmail(thisContact.email)
+                        setAddress(thisContact.address)
+                }
+                getContact()
+        }, [])
+
+        console.log(name, phone, email, address, address)
         return (
                 <div className="jumbotron">
-                        <div class="mb-3">
-                                <h1>Add a New Contact</h1>
-                                <label htmlfor="formGroupExampleInput" class="form-label">Full Name</label>
-                                <input value={name} onChange={(e) => setName(e.target.value)} type="text" class="form-control" id="formGroupExampleInput1" placeholder="Enter your full name here"></input>
+                        <div className="mb-3">
+                                <h1>Update Contact</h1>
+                                <label htmlFor="formGroupExampleInput" className="form-label">Full Name</label>
+                                <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="form-control" id="formGroupExampleInput1" placeholder="Enter your full name here"></input>
                         </div>
-                        <div class="mb-3">
-                                <label htmlfor="formGroupExampleInput2" class="form-label">Email</label>
-                                <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter your email address here"></input>
+                        <div className="mb-3">
+                                <label htmlFor="formGroupExampleInput2" className="form-label">Email</label>
+                                <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" className="form-control" id="formGroupExampleInput2" placeholder="Enter your email address here"></input>
                         </div>
-                        <div class="mb-3">
-                                <label hmtlfor="formGroupExampleInput3" class="form-label">Phone</label>
-                                <input value={phone} onChange={(e) => setPhone(e.target.value)} type="text" class="form-control" id="formGroupExampleInput3" placeholder="Enter your phone number here"></input>
+                        <div className="mb-3">
+                                <label htmlFor="formGroupExampleInput3" className="form-label">Phone</label>
+                                <input value={phone} onChange={(e) => setPhone(e.target.value)} type="text" className="form-control" id="formGroupExampleInput3" placeholder="Enter your phone number here"></input>
                         </div>
-                        <div class="mb-3">
-                                <label htmlfor="formGroupExampleInput3" class="form-label">Address</label>
-                                <input value={address} onChange={(e) => setAddress(e.target.value)} type="text" class="form-control" id="formGroupExampleInput3" placeholder="Enter your physical address here"></input>
+                        <div className="mzb-3">
+                                <label htmlFor="formGroupExampleInput3" className="form-label">Address</label>
+                                <input value={address} onChange={(e) => setAddress(e.target.value)} type="text" className="form-control" id="formGroupExampleInput3" placeholder="Enter your physical address here"></input>
                         </div>
-                        <div class="button">
-                                <Link to={"/"} type="button" class="btn btn-success" onClick={() => actions.updateContact(name, email, phone, address, id)}>Update Contact </Link>
-                                <Link type="button" to={"/"} class="btn btn-danger  justify-content-center">Cancel</Link>
-                                <Link type="button" to={"/"} class="btn btn-primary justify-content-right">Go to Home page</Link>
+                        <div classNameName="button">
+                                <Link to={"/"} type="button" className="btn btn-success" onClick={() => actions.updateContact(name, email, phone, address, id)}>Update Contact </Link>
+                                <Link type="button" to={"/"} className="btn btn-danger  justify-content-center">Cancel</Link>
+                                <Link type="button" to={"/"} className="btn btn-primary justify-content-right">Go to Home page</Link>
                         </div>
                 </div>
         )

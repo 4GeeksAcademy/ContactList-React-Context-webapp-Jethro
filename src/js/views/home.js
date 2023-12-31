@@ -14,8 +14,11 @@ export const Home = () => {
 
   useEffect(() => {
     /*actions.addContact("Jethro", "123 Parkway", "3445666", "jwetti@gmail.com")*/
-    actions.getContact()
-    setContact(store.contacts)
+    async function getContacts() {
+      await actions.getContact()
+      setContact(store.contacts)
+    }
+    getContacts()
   }, [])
 
 
