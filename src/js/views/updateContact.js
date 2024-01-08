@@ -20,6 +20,24 @@ export const UpdateContact = props => {
         useEffect(() => {
                 async function getContact() {
                         await actions.getContact()
+                        let thisContact = store.contacts.find((contact) => contact.id == id)
+                        console.log(thisContact)
+                        setName(thisContact.full_name)
+                        setPhone(thisContact.phone)
+                        setEmail(thisContact.email)
+                        setAddress(thisContact.address)
+                }
+                getContact()
+        }, [])
+
+
+
+
+
+        /*
+        useEffect(() => {
+                async function getContact() {
+                        await actions.getContact()
                         let thisContact = store.contacts.filter((contact) => contact.id === id)
                         console.log(thisContact)
                         setName(thisContact.name)
@@ -29,6 +47,7 @@ export const UpdateContact = props => {
                 }
                 getContact()
         }, [])
+        */
 
         console.log(name, phone, email, address, address)
         return (
